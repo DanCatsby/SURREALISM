@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catsby Studios - Surrealism</title>
+    <title>SURREALISM</title>
     
-    <!-- 🚀 УЛЬТРА-СНАЙПЕРСКИЙ ПЕРЕКЛЮЧАТЕЛЬ НА МОБИЛКИ -->
     <script>
         if (window.innerWidth <= 768) {
             window.location.href = "https://band.link/Aobs3";
@@ -19,7 +18,6 @@
             box-sizing: border-box;
         }
 
-        /* Полная блокировка скролла — страница монолитна под экран ПК */
         html, body {
             background-color: #000000;
             overflow: hidden; 
@@ -30,7 +28,6 @@
             align-items: center;
         }
 
-        /* Главный контейнер намертво растягивается во весь экран дисплея */
         .site-wrapper {
             position: relative;
             width: 100vw;
@@ -46,7 +43,6 @@
             height: 100%;
         }
 
-        /* 🪐 Ультравайд фон заполняет весь экран. object-position защищает левый край с текстом от обрезки! */
         .main-bg {
             width: 100%;
             height: 100%;
@@ -58,44 +54,40 @@
             transition: filter 2.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.5s ease;
         }
 
-        /* 🎛️ ИДЕАЛЬНОЕ НАЛОЖЕНИЕ ГИГАНТСКИХ ПЛАШЕК НА БОРДОВУЮ ДЮНУ НА ПК */
-        /* Переведено на vh/vw, чтобы при зуме плашки стояли как вкопанные относительно фона! */
         .buttons-overlay {
             position: absolute;
-            bottom: 7.8vh; /* Было 85px — теперь жесткий процент от высоты экрана */
+            bottom: 7.8vh; 
             left: 0;     
             width: 100%;   
             display: flex;
-            justify-content: flex-start; /* Выравнивание слева-направо */
-            align-items: flex-start; /* ВЫРАВНИВАЕМ ВСЕ ПЛАШКИ ПО ИХ ВЕРХНЕМУ КРАЮ */
+            justify-content: flex-start; 
+            align-items: flex-start;
             padding-left: 6.5%; 
-            gap: 1.05vw;    /* Было 20px — теперь зазор масштабируется вместе с экраном */
+            gap: 1.05vw; 
             z-index: 20;
         }
 
-        /* 🔥 ТЕ САМЫЕ ОГРОМНЫЕ ПЛАШКИ С СОХРАНЕНИЕМ РОДНЫХ ПРОПОРЦИЙ */
         .stream-btn {
             display: block;
-            width: 13.54vw; /* Было 260px — теперь ширина кнопок намертво привязана к экрану */
+            width: 13.54vw;
             opacity: 0;
-            filter: grayscale(100%) saturate(0%); /* Старт в ЧБ */
+            filter: grayscale(100%) saturate(0%); 
             transition: transform 0.25s ease, filter 1.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.5s ease;
         }
 
         .stream-btn img {
             width: 100%;
-            height: auto; /* Высота масштабируется вместе с шириной */
+            height: auto; 
             display: block;
         }
 
-        /* 🎯 ЧИСТЫЙ ХОВЕР: Свечение убрано! Только аккуратный зум и 100% цвет */
         .stream-btn:hover {
             transform: scale(1.06);
             filter: grayscale(0%) saturate(100%) !important;
             opacity: 1 !important;
         }
 
-        /* Класс активации оригинального цвета скриптом */
+
         .animated-start {
             filter: grayscale(0%) saturate(100%) !important;
             opacity: 1 !important;
@@ -106,12 +98,10 @@
 
     <div class="site-wrapper">
         <div class="main-bg-container">
-            <!-- Твой космический 21:9 фон -->
+
             <img src="images/BACKGROUND.png" alt="Surrealism Background" class="main-bg" id="bg-image">
             
-            <!-- Ряд твоих гигантских интерактивных плашек -->
             <div class="buttons-overlay">
-                <!-- Временные заглушки #, пока ссылок нет. Потом просто вставишь их сюда! -->
                 <a href="https://music.yandex.ru/artist/24306326" target="_blank" class="stream-btn btn-yandex"><img src="images/YANDEX.png" alt="Yandex Music"></a>
                 <a href="https://open.spotify.com/artist/1JEAHAudUas4fjttkwMtls?si=K8IylmItQgGKoKgT1aLFQw&utm_source=copy-link" target="_blank" class="stream-btn btn-spotify"><img src="images/SPOTIK.png" alt="Spotify"></a>
                 <a href="https://music.apple.com/ru/artist/dancatsby/1818544517" target="_blank" class="stream-btn btn-apple"><img src="images/APPLE.png" alt="Apple Music"></a>
@@ -122,7 +112,6 @@
         </div>
     </div>
 
-    <!-- 🎲 СКРИПТ: ХАОТИЧНОЕ ВКЛЮЧЕНИЕ САТУРАЦИИ ДЛЯ ВСЕХ СИСТЕМ ПК -->
     <script>
         window.addEventListener('DOMContentLoaded', () => {
             const bg = document.getElementById('bg-image');
@@ -132,7 +121,6 @@
                 bg.classList.add('animated-start');
             }, 200);
 
-            // Рандомные тайминги проявления плашек вразнобой
             const buttons = [
                 { selector: '.btn-vk', delay: 500 },
                 { selector: '.btn-spotify', delay: 1100 },
@@ -152,7 +140,6 @@
             });
         });
 
-        /* 🔐 АППАРАТНЫЙ ЖЕЛЕЗНЫЙ АНТИ-ЗУМ (Защита от Ctrl+, Ctrl-, Ctrl+Колесико) */
         document.addEventListener('wheel', function(event) {
             if (event.ctrlKey) {
                 event.preventDefault();
